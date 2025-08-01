@@ -29,7 +29,9 @@ I was initally wary of split or ergonomic keyboards as I thought they looked bad
 
 
 # BOM
-Note: Typeractive was sometimes cheaper than AliExpress, thus some parts were sourced from them instead.
+Note: 
+- Typeractive was sometimes cheaper than AliExpress, thus some parts were sourced from them instead.
+- Keycaps will be 3D printed
 | Part                | Quantity      | Price   | Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |---------------------|---------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Kailh Hotswaps      | 50            | $6.43   | https://www.aliexpress.us/item/3256803389452947.html?spm=a2g0o.productlist.main.2.2d58wPyBwPyBEt&algo_pvid=5397cf1b-89b0-42d8-931c-bb6690c660d2&algo_exp_id=5397cf1b-89b0-42d8-931c-bb6690c660d2-1&pdp_ext_f=%7B%22order%22%3A%22345%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21USD%216.43%216.43%21%21%216.43%216.43%21%402103244617540148867196355e4149%2112000036729252546%21sea%21US%216238534509%21X&curPageLogUid=3XqgRROVGzzZ&utparam-url=scene%3Asearch%7Cquery_from%3A   |
