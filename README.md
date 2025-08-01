@@ -1,6 +1,8 @@
 # Corneucopia
 A Corne based custom low-profile keyboard 
 
+## Firmware located [here](https://github.com/DynamicWhiteHat/Corneucopia-Firmware)
+
 ---
 
 Corneucopia is a 42-key low profile wireless keyboard that runs on ZMK firmware. Featuring 2 OLED displays and powered by a Supermini NRF52840, this keyboard is meant to last as your daily driver. 
