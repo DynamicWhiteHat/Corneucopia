@@ -1,0 +1,13 @@
+file_format: "1"
+id: nrfeather
+name: nrFeather
+type: shield
+url: https://github.com/DynamicWhiteHat/nrFeather
+requires:
+  - nrf_52840_feather
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+  - studio

@@ -1,0 +1,58 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+
+&soft_off {
+    hold-time-ms = <5000>;
+};
+
+keymap {
+        compatible = "zmk,keymap";
+
+       default_layer {
+            display-name = "Base";
+            // ------------------------------------------------------------------------------------------------------------------------
+            // |  ESC  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10  |  F11  |  F12  | PSCRN |  DEL  |       |
+            // |  ~   |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  0    |  -    |  =    |       BSPC     |  PGUP |
+            // |    TAB    |  Q   |  W   |  E   |  R   |  T   |  Y   |  U   |  I   |  O   |  P    |  [    |  ]    |    \      |  PGDN |
+            // |     CAPS    |  A   |  S   |  D   |  F   |  G   |  H   |  J   |  K   |  L   |  ;    |  '    |       ENTER     |  HOME |
+            // |     SHIFT     |  Z   |  X   |  C   |  V   |  B   |  N   |  M   |  ,   |  .   |    /   |     SHIFT     |  UP  |  END  |
+            // | LCTRL |  LALT  | SUPER |                    SPACE                    | RALT | FN | LAYER |    LEFT    | DOWN | RIGHT |
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            bindings = <
+                
+                &kp ESC    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F6    &kp F7   &kp F8     &kp F9    &kp F10    &kp F11    &kp F12    &kp PSCRN   &kp DEL    &rgb_ug RGB_TOG
+                &kp GRAVE  &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6     &kp 7    &kp 8      &kp 9     &kp 0      &kp MINUS  &kp EQUAL  &kp BSPC    &kp PG_UP
+                &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y     &kp U    &kp I      &kp O     &kp P      &kp LBKT   &kp RBKT   &kp BSLH    &kp PG_DN
+                &kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G    &kp H     &kp J    &kp K      &kp L     &kp SEMI   &kp SQT    &kp ENTER  &kp HOME
+                &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N     &kp M    &kp COMMA  &kp DOT   &kp SLASH  &kp RSHFT  &kp UP     &kp END
+                &kp LCTRL  &kp LALT &kp LGUI &kp SPC  &kp RALT &kp FN   &to 1     &kp LEFT &kp DOWN   &kp RIGHT
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        ctrl {
+            display-name = "Control";
+            // ------------------------------------------------------------------------------------------------------------------------
+            // | LAYER |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10  |  F11  |  F12  | PSCRN |  DEL  |       |
+            // |  ~   |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  0    |  -    |  =    |       BSPC     |  PGUP |
+            // |    TAB    |  Q   |  W   |  E   |  R   |  T   |  Y   |  U   |  I   |  O   |  P    |  [    |  ]    |    \      |  PGDN |
+            // |     CAPS    |  A   |  S   |  D   |  F   |  G   |  H   |  J   |  K   |  L   |  ;    |  '    |       ENTER     |  HOME |
+            // |     SHIFT     |  Z   |  X   |  C   |  V   |  B   |  N   |  M   |  ,   |  .   |    /   |     SHIFT     |  UP  |  END  |
+            // | LCTRL |  LALT  | SUPER |                    SPACE                    | RALT | FN | RCTRL |    LEFT    | DOWN | RIGHT |
+            // ------------------------------------------------------------------------------------------------------------------------
+            bindings = <                                                                                                                
+                &to 2              &none &none &none &none &none &none &none &none &none &none &none &none &none &none &soft_off
+                &none           &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none           &bt BT_SEL 4    &bt BT_SEL 5    &bt BT_PRV     &bt BT_NXT    &bt BT_CLR      &bt BT_CLR_ALL     &none &none &none &none &rgb_ug RGB_BRI
+                &none           &rgb_ug HUI     &rgb_ug SAI     &none           &none           &none           &none           &none           &none           &none           &none           &none &none &none &none &rgb_ug RGB_BRD
+                &none           &rgb_ug HUD     &rgb_ug SAD     &none           &none           &none           &none           &none           &none           &none           &none           &none &none &none &rgb_ug RGB_EFF
+                &none           &none           &none           &none           &none           &none           &none           &none           &rgb_ug RGB_SPI &none           &none           &none &none &none &none &rgb_ug RGB_EFR
+                &studio_unlock  &none           &none           &sys_reset      &none           &none           &bootloader     &none           &rgb_ug RGB_SPD &none
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    }

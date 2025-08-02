@@ -1,0 +1,2 @@
+config SHIELD_NRFEATHER
+    def_bool $(shields_list_contains,nrFeather)

@@ -1,0 +1,78 @@
+/*
+ * Copyright (c) 2025 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&mcp23017 0 GPIO_ACTIVE_HIGH>  /* GPA0 */
+            , <&mcp23017 1 GPIO_ACTIVE_HIGH>  /* GPA1 */
+            , <&mcp23017 2 GPIO_ACTIVE_HIGH>  /* GPA2 */
+            , <&mcp23017 3 GPIO_ACTIVE_HIGH>  /* GPA3 */
+            , <&mcp23017 4 GPIO_ACTIVE_HIGH>  /* GPA4 */
+            , <&mcp23017 5 GPIO_ACTIVE_HIGH>  /* GPA5 */
+            , <&mcp23017 6 GPIO_ACTIVE_HIGH>  /* GPA6 */
+            , <&mcp23017 7 GPIO_ACTIVE_HIGH>  /* GPA7 */
+            , <&mcp23017 8 GPIO_ACTIVE_HIGH>  /* GPB0 */
+            , <&mcp23017 9 GPIO_ACTIVE_HIGH>  /* GPB1 */
+            , <&mcp23017 10 GPIO_ACTIVE_HIGH> /* GPB2 */
+            , <&mcp23017 11 GPIO_ACTIVE_HIGH> /* GPB3 */
+            , <&mcp23017 12 GPIO_ACTIVE_HIGH> /* GPB4 */
+            , <&mcp23017 13 GPIO_ACTIVE_HIGH> /* GPB5 */
+            , <&mcp23017 14 GPIO_ACTIVE_HIGH> /* GPB6 */
+            , <&mcp23017 15 GPIO_ACTIVE_HIGH>; /* GPB7 */
+            ;
+
+        row-gpios
+            = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+    encoder: encoder {
+        compatible = "alps,ec11";
+        a-gpios = <gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <20>;
+        status = "disabled";
+    };
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder>;
+    };
+    
+    physical_layout0: physical_layout_0 { 
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        kscan = <&kscan0>; 
+    };
+    };
+    &encoder {
+    status = "okay";
+    };
+    &i2c1 {
+    mcp23017: mcp23017@20 {
+        compatible = "microchip,mcp23017";
+        reg = <0x20>;
+        gpio-controller;
+        #gpio-cells = <2>;
+    };
+    };
+    {
+    
+};
