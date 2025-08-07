@@ -25,6 +25,9 @@ I was initally wary of split or ergonomic keyboards as I thought they looked bad
 ## PCB
 <img width="1317" height="643" alt="Screenshot 2025-07-31 214414" src="https://github.com/user-attachments/assets/4e5eb38a-6b01-4ca8-8f80-f56070fb948b" />
 
+## Schematic
+<img width="1157" height="567" alt="image" src="https://github.com/user-attachments/assets/5dfadc8f-f48d-45ba-b7cf-ef13ed2f86c8" />
+
 
 # BOM
 Note: 
